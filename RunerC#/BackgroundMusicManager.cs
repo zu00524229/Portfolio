@@ -12,6 +12,7 @@ public class BackgroundMusicManager : MonoBehaviour
         }
     }
 
+
     // 停止背景音樂
     public void StopMusic()
     {
