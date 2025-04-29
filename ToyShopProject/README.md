@@ -54,7 +54,13 @@
 
 ### 商品列表
 
+![首頁](screenshots/index.png)
+![活動公告](screenshots/Notice.png)
+![活動公告1](screenshots/Notice1.png)
 ![商品列表](screenshots/product-list0.png)
+![玩家專區](screenshots/Player.png)
+![儲值專區](screenshots/Player1.png) ## 目前沒有接金流
+![後台](screenshots/Admin.png)
 
 ### 抽獎介面（含 SweetAlert2）
 
