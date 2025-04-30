@@ -1,66 +1,76 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🛍 ToysShop 後台抽獎系統
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## 📌 專案簡介
 
-## About Laravel
+這是一個使用 Laravel 建立的後台抽獎管理系統，具備商品新增、抽獎設定、抽獎執行與歷史紀錄等功能，支援動態畫面與視覺化提示。
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🔧 技術使用
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+-   Laravel + PHP
+-   MySQL 資料庫
+-   Bootstrap、HTML5、CSS3、JavaScript
+-   Axios 串接 API
+-   SweetAlert2 提示框、Lightbox 圖片展示
+-   Git / GitHub 版本控制
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🧩 我的職責與貢獻
 
-## Learning Laravel
+在本專案中，我負責開發前台商品頁與抽獎展示功能，主要參與的程式區塊與模板頁面包括：
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### ➤ 開發區域
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+-   `app/Http/Controllers/Front/ProductController.php`：  
+    商品頁邏輯控制與資料處理。
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+-   `resources/views/front/product/prodictAllList.blade.php`
+-   `resources/views/front/product/prodictCategoryList.blade.php`
+-   `resources/views/front/product/prodictList.blade.php`：  
+    三個商品列表畫面設計與資料呈現。
 
-## Laravel Sponsors
+-   `routes/front/product.php`：  
+    商品模組路由設定與功能導向。
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### ➤ 我的工作內容
 
-### Premium Partners
+-   設計前台商品抽獎頁面 UI 與抽獎邏輯流程
+-   實作抽獎結果篩選（避免重複中獎）
+-   使用 SweetAlert2 顯示中獎提示，改善使用者體驗
+-   串接 API 顯示商品資料，並處理圖片展示錯誤等問題
+-   協助除錯與調整商品資料顯示問題
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+### 🛠 實際開發中曾遇到的問題與解法
 
-## Contributing
+在開發抽獎流程時，曾遇到一個情境問題：當使用者尚未登入就點擊「抽獎」，系統會正確導向登入頁並提示需登入，但使用者登入後，**無法導回原本的商品抽獎畫面**，導致畫面無資料、頁面錯誤。
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+經除錯後發現，原先 `ProductController` 中的 `lottery` 方法未能保留之前選取的商品資料，加上路由使用 `GET`，無法正確讀取原請求的資料。  
+後來我們調整了以下邏輯：
 
-## Code of Conduct
+-   **改為使用 `any` 方法接收路由**（接受 GET/POST 都可處理）
+-   **調整 Controller 的參數處理方式**，讓登入後可正確取得商品資料與頁面狀態
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+這段過程雖然花了一些時間，但讓我實際學到 Laravel 路由處理與登入後導向邏輯的應用，對 MVC 架構中「狀態傳遞」與「流程維持」的理解也更進一步。
 
-## Security Vulnerabilities
+###### 📷 專案畫面
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 商品列表
 
-## License
+![首頁](screenshots/index.png)
+![活動公告](screenshots/Notice.png)
+![活動公告1](screenshots/Notice1.png)
+![商品列表](screenshots/product-list0.png)
+![玩家專區](screenshots/Player.png)
+![儲值專區](screenshots/Player1.png) ## 目前沒有接金流
+![後台](screenshots/Admin.png)
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 抽獎介面（含 SweetAlert2）
+
+![抽獎流程1](screenshots/productlottery1.png)
+![抽獎流程2](screenshots/productlottery2.png)
+
+## 🚀 專案執行方式
+
+![專案展示](screenshots/ToyShop.gif)
+
+⚠️ 本專案為團隊合作實作作品，需搭配專用資料庫方能完整執行。  
+由於資料庫內容含開發期間測試資料，目前無法直接對外公開執行版本，  
+可參考上方畫面截圖與程式碼了解功能實作內容。
