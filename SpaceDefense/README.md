@@ -1,7 +1,7 @@
 # 太空保衛戰！🚀
 
 2D 太空射擊遊戲，玩家要操控太空船射擊墜落的隕石，並躲避攻擊來生存下去。
-使用 **Pygame + MySQL + PHP（XAMPP）** 製作的 2D 太空射擊遊戲，結合了本地遊戲操作與 **網路排行榜上傳功能**。
+使用 **Pygame + MySQL + PHP（XAMPP）** 製作的 2D 太空射擊遊戲，結合了本地遊戲操作與 **排行榜上傳功能**。
 
 ![screenshot](img/q1.png)
 ![screenshot](img/q2.png)
