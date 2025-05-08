@@ -4,6 +4,7 @@
 import sqlite3
 import pygame
 from utils import draw_text
+import sys
 
 def init_db():
     conn = sqlite3.connect('scores.db')
@@ -84,6 +85,7 @@ def draw_rank_screen(screen, background_img, score, WIDTH, HEIGHT, font_name):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
+                sys.exit()
                 exit()
             elif event.type == pygame.KEYUP:
                 waiting = False
