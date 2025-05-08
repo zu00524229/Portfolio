@@ -36,7 +36,12 @@
 - 會顯示排行榜前 5 名
 - 使用 Python `requests` 模組與後端 PHP 溝通
 
-# 排行榜需本機啟動 XAMPP
+## >>>>>排行榜需本機啟動 XAMPP
+
+- 單機版排行榜
+  將 main 關聯 from rank import input_name_screen, draw_rank_screen, submit_score
+  改成 from singlerank import init_db, input_name_screen, draw_rank_screen, submit_score
+  可改成單機版排行榜
 
 📌 資料表結構：
 
