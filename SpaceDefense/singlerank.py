@@ -59,7 +59,7 @@ def input_name_screen(screen, background_img, score, WIDTH, HEIGHT, font_name):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
-                exit()
+                sys.exit()
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_RETURN and name != "":
                     return name
@@ -86,6 +86,5 @@ def draw_rank_screen(screen, background_img, score, WIDTH, HEIGHT, font_name):
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
-                exit()
             elif event.type == pygame.KEYUP:
                 waiting = False
