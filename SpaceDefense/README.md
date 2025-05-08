@@ -36,6 +36,8 @@
 - 會顯示排行榜前 5 名
 - 使用 Python `requests` 模組與後端 PHP 溝通
 
+# 排行榜需本機啟動 XAMPP
+
 📌 資料表結構：
 
 ```sql
