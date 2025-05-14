@@ -1,0 +1,48 @@
+.muji-login-box {
+  max-width: 450px;
+  width: 100%;
+  padding: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #f5f5f5;
+  font-family: 'Noto Sans TC', sans-serif;
+  box-shadow: none;
+}
+
+.muji-login-box h3 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #8B4513; /* 主色棕 */
+  font-weight: 600;
+}
+
+.muji-login-box .form-label {
+  color: #4a4a4a;
+}
+
+.muji-login-box .form-control {
+  border-radius: 4px;
+  border-color: #ccc;
+  background-color: #fdfdfc;
+  color: #4a4a4a;
+}
+
+.muji-login-box .btn {
+  background-color: #8B4513;
+  color: #fff;
+  font-weight: 500;
+  border: none;
+}
+
+.muji-login-box .btn:hover {
+  background-color: #6e3610;
+}
+
+.muji-login-box a {
+  color: #8B4513;
+  font-weight: 600;
+  text-decoration: none;
+}
+.muji-login-box a:hover {
+  text-decoration: underline;
+}
