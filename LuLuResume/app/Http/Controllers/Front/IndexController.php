@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Models\Player;
+use App\Models\Major;
+use App\Models\Majorcategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -13,7 +15,9 @@ class IndexController extends Controller
 {
     public function index()
     {
-        return view("front.index");
+        $majors = Major::all(); // 撈出所有專業資料
+        $categories = MajorCategory::all(); // 撈取MajorCategory
+        return view("front.index", compact('majors', 'categories'));  // 傳給前台首頁
     }
 
     public function login()

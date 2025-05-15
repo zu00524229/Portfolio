@@ -12,7 +12,7 @@ class MajorController extends Controller
 {
     public function list(Request $request)
     {
-        $majors = Major::with('majorCategory')->orderBy('creatrTime', 'desc')->paginate(10);
+        $majors = Major::with('majorCategory')->orderBy('createTime', 'desc')->paginate(10);
         return view('admin.major.list', compact('majors'));
     }
 
@@ -24,8 +24,9 @@ class MajorController extends Controller
 
     public function insert(Request $req)
     {
+        // dd($req->all());
         $req->validate([
-            'majorId' => 'required|unique:majors,majorId',
+            'majorId' => 'required|exists:majorcategories,id',
             'name' => 'required',
             'photo' => 'nullable|image',
             'content' => 'nullable|string',
@@ -41,7 +42,7 @@ class MajorController extends Controller
             'name' => $req->name,
             'photo' => $photoPath,
             'content' => $req->content,
-            'creatrTime' => now(),
+            'createTime' => now(),
         ]);
 
         return redirect()->route('admin.major.list')->with('message', '新增成功！');

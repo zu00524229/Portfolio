@@ -14,39 +14,37 @@
                     <div class="row align-items-center">
                         <div class="col-lg-7" data-aos="zoom-out" data-aos-delay="100">
                             <div class="hero-content">
-                                <h1>Empowering Futures Through Education</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae diam ornare, imperdiet
-                                    est eget, pretium augue. Nullam auctor felis in nibh gravida, eu viverra risus egestas.
-                                </p>
+                                <h1>About Me</h1>
+                                <p>照顧他人曾是我的職責，如今是我的選擇。從護理走進富邦保險，我將療癒的本質帶進保障的世界，透過 MMT 與塔羅陪伴你看見自己的光。</p>
                                 <div class="cta-buttons">
-                                    <a href="#" class="btn-primary">Start Your Journey</a>
-                                    <a href="#" class="btn-secondary">Discover Programs</a>
+                                    <a href="#contact" class="btn-primary">預約一對一諮詢</a>
+                                    <a href="#about" class="btn-secondary">了解我的專業</a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-5" data-aos="zoom-out" data-aos-delay="200">
                             <div class="stats-card">
                                 <div class="stats-header">
-                                    <h3>Why Choose Us</h3>
+                                    <h3>🧩 My Journey, My Expertise</h3>
                                     <div class="decoration-line"></div>
                                 </div>
                                 <div class="stats-grid">
                                     <div class="stat-item">
                                         <div class="stat-icon">
-                                            <i class="bi bi-trophy-fill"></i>
+                                            <i class="bi bi-heart-pulse"></i>
                                         </div>
                                         <div class="stat-content">
                                             <h4>98%</h4>
-                                            <p>Graduate Employment</p>
+                                            <p> 照護護理</p>
                                         </div>
                                     </div>
                                     <div class="stat-item">
                                         <div class="stat-icon">
-                                            <i class="bi bi-globe"></i>
+                                            <i class="bi bi-moon-stars-fill"></i>
                                         </div>
                                         <div class="stat-content">
-                                            <h4>45+</h4>
-                                            <p>International Partners</p>
+                                            <h4>80+</h4>
+                                            <p> MMT 天賦系統</p>
                                         </div>
                                     </div>
                                     <div class="stat-item">
@@ -54,17 +52,17 @@
                                             <i class="bi bi-mortarboard"></i>
                                         </div>
                                         <div class="stat-content">
-                                            <h4>15:1</h4>
-                                            <p>Student-Faculty Ratio</p>
+                                            <h4>120+</h4>
+                                            <p>專業知識</p>
                                         </div>
                                     </div>
                                     <div class="stat-item">
                                         <div class="stat-icon">
-                                            <i class="bi bi-building"></i>
+                                            <i class="bi bi-prescription2"></i>
                                         </div>
                                         <div class="stat-content">
                                             <h4>120+</h4>
-                                            <p>Degree Programs</p>
+                                            <p>富邦保險</p>
                                         </div>
                                     </div>
                                 </div>
@@ -185,13 +183,13 @@
 
         </section><!-- /About Section -->
 
-        <!-- Featured Programs Section -->
+        <!-- 技能專長 -->
         <section id="featured-programs" class="featured-programs section">
 
-            <!-- Section Title -->
+            <!-- 技能專長 -->
             <div class="container section-title" data-aos="fade-up">
-                <h2>Featured Programs</h2>
-                <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+                <h2>專業整合．貼近人心</h2>
+                <p>從臨床護理到保險顧問，結合心理學、MMT 與靈性覺察，打造最貼近人心的支持與保障。</p>
             </div><!-- End Section Title -->
 
             <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -199,181 +197,45 @@
                 <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
                     <ul class="program-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
                         <li data-filter="*" class="filter-active">All Programs</li>
-                        <li data-filter=".filter-bachelor">MMT</li>
-                        <li data-filter=".filter-master">護理專業</li>
-                        <li data-filter=".filter-certificate">保險業務</li>
+                        @foreach ($categories as $category)
+                            <li data-filter=".filter-{{ $category->id }}">{{ $category->name }}</li>
+                        @endforeach
                     </ul>
 
                     <div class="row g-4 isotope-container">
-                        <div class="col-lg-6 isotope-item filter-bachelor" data-aos="zoom-in" data-aos-delay="100">
-                            <div class="program-item">
-                                <div class="program-badge">MMT</div>
-                                <div class="row g-0">
-                                    <div class="col-md-4">
-                                        <div class="program-image-wrapper">
-                                            <img src="assets/img/education/education-1.webp" class="img-fluid"
-                                                alt="Program">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="program-content">
-                                            <h3>MMT</h3>
-                                            <div class="program-highlights">
-                                                <span><i class="bi bi-clock"></i> 4 Years</span>
-                                                <span><i class="bi bi-people-fill"></i> 120 Credits</span>
-                                                <span><i class="bi bi-calendar3"></i> Fall &amp; Spring</span>
+                        @foreach ($majors as $major)
+                            <div class="col-lg-6 isotope-item filter-{{ $major->majorId }}" data-aos="zoom-in"
+                                data-aos-delay="{{ $loop->iteration * 100 }}">
+                                <div class="program-item">
+                                    <div class="program-badge"> {{ $major->majorCategory->name ?? '未分類' }}</div>
+                                    <!-- 小標籤 -->
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <div class="program-image-wrapper">
+                                                <img src="{{ asset('storage/' . $major->photo) }}" alt="">
                                             </div>
-                                            <p>內容區域</p>
-                                            <a href="#" class="program-btn"><span>Learn More</span> <i
-                                                    class="bi bi-arrow-right"></i></a>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="program-content">
+                                                <h3>{{ $major->name }}</h3>
+                                                <div class="program-highlights">
+                                                    <span><i class="bi bi-clock"></i> 4 Years</span>
+                                                    <span><i class="bi bi-people-fill"></i> 120 Credits</span>
+                                                    <span><i class="bi bi-calendar3"></i> Fall &amp; Spring</span>
+                                                </div>
+                                                <p>{{ $major->content }}</p>
+                                                <a href="#" class="program-btn"><span>Learn More</span> <i
+                                                        class="bi bi-arrow-right"></i></a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div><!-- End Program Item -->
-
-                        <div class="col-lg-6 isotope-item filter-bachelor" data-aos="zoom-in" data-aos-delay="200">
-                            <div class="program-item">
-                                <div class="program-badge">MMT</div>
-                                <div class="row g-0">
-                                    <div class="col-md-4">
-                                        <div class="program-image-wrapper">
-                                            <img src="assets/img/education/education-3.webp" class="img-fluid"
-                                                alt="Program">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="program-content">
-                                            <h3>Business Administration</h3>
-                                            <div class="program-highlights">
-                                                <span><i class="bi bi-clock"></i> 3 Years</span>
-                                                <span><i class="bi bi-people-fill"></i> 90 Credits</span>
-                                                <span><i class="bi bi-calendar3"></i> Fall Only</span>
-                                            </div>
-                                            <p>Nullam sed augue a turpis bibendum cursus. Suspendisse potenti. Praesent mi
-                                                diam, feugiat a tincidunt at.</p>
-                                            <a href="#" class="program-btn"><span>Learn More</span> <i
-                                                    class="bi bi-arrow-right"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!-- End Program Item -->
-
-                        <div class="col-lg-6 isotope-item filter-bachelor" data-aos="zoom-in" data-aos-delay="300">
-                            <div class="program-item">
-                                <div class="program-badge">MMT</div>
-                                <div class="row g-0">
-                                    <div class="col-md-4">
-                                        <div class="program-image-wrapper">
-                                            <img src="assets/img/education/education-5.webp" class="img-fluid"
-                                                alt="Program">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="program-content">
-                                            <h3>Medical Sciences</h3>
-                                            <div class="program-highlights">
-                                                <span><i class="bi bi-clock"></i> 5 Years</span>
-                                                <span><i class="bi bi-people-fill"></i> 150 Credits</span>
-                                                <span><i class="bi bi-calendar3"></i> Fall Only</span>
-                                            </div>
-                                            <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
-                                                cubilia curae.</p>
-                                            <a href="#" class="program-btn"><span>Learn More</span> <i
-                                                    class="bi bi-arrow-right"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!-- End Program Item -->
-
-                        <div class="col-lg-6 isotope-item filter-master" data-aos="zoom-in" data-aos-delay="100">
-                            <div class="program-item">
-                                <div class="program-badge">護理專業</div>
-                                <div class="row g-0">
-                                    <div class="col-md-4">
-                                        <div class="program-image-wrapper">
-                                            <img src="assets/img/education/education-7.webp" class="img-fluid"
-                                                alt="Program">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="program-content">
-                                            <h3>Environmental Studies</h3>
-                                            <div class="program-highlights">
-                                                <span><i class="bi bi-clock"></i> 2 Years</span>
-                                                <span><i class="bi bi-people-fill"></i> 60 Credits</span>
-                                                <span><i class="bi bi-calendar3"></i> Spring Only</span>
-                                            </div>
-                                            <p>Aenean imperdiet, erat vel consequat mollis, nunc risus aliquam nunc, eget
-                                                condimentum urna dui et metus.</p>
-                                            <a href="#" class="program-btn"><span>Learn More</span> <i
-                                                    class="bi bi-arrow-right"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!-- End Program Item -->
-
-                        <div class="col-lg-6 isotope-item filter-master" data-aos="zoom-in" data-aos-delay="200">
-                            <div class="program-item">
-                                <div class="program-badge">護理專業</div>
-                                <div class="row g-0">
-                                    <div class="col-md-4">
-                                        <div class="program-image-wrapper">
-                                            <img src="assets/img/education/education-9.webp" class="img-fluid"
-                                                alt="Program">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="program-content">
-                                            <h3>Mechanical Engineering</h3>
-                                            <div class="program-highlights">
-                                                <span><i class="bi bi-clock"></i> 2 Years</span>
-                                                <span><i class="bi bi-people-fill"></i> 64 Credits</span>
-                                                <span><i class="bi bi-calendar3"></i> Fall &amp; Spring</span>
-                                            </div>
-                                            <p>Praesent tincidunt, massa et porttitor imperdiet, lorem ex ultricies ipsum, a
-                                                tempus metus eros non tortor.</p>
-                                            <a href="#" class="program-btn"><span>Learn More</span> <i
-                                                    class="bi bi-arrow-right"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!-- End Program Item -->
-
-                        <div class="col-lg-6 isotope-item filter-certificate" data-aos="zoom-in" data-aos-delay="100">
-                            <div class="program-item">
-                                <div class="program-badge">保險業務</div>
-                                <div class="row g-0">
-                                    <div class="col-md-4">
-                                        <div class="program-image-wrapper">
-                                            <img src="assets/img/education/education-2.webp" class="img-fluid"
-                                                alt="Program">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="program-content">
-                                            <h3>Data Science</h3>
-                                            <div class="program-highlights">
-                                                <span><i class="bi bi-clock"></i> 6 Months</span>
-                                                <span><i class="bi bi-people-fill"></i> 24 Credits</span>
-                                                <span><i class="bi bi-calendar3"></i> Year-round</span>
-                                            </div>
-                                            <p>Mauris sed erat in mi vestibulum commodo. Donec a purus at justo facilisis
-                                                imperdiet tnteger pell</p>
-                                            <a href="#" class="program-btn"><span>Learn More</span> <i
-                                                    class="bi bi-arrow-right"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!-- End Program Item -->
-
+                            </div><!-- End Program Item -->
+                        @endforeach
                     </div>
+
                 </div>
+            </div>
 
             </div>
 
@@ -404,7 +266,7 @@
                 </div>
 
                 <div class="col-lg-2 col-md-3 footer-links">
-                    <h4>Useful Links</h4>
+                    <h4>關於我</h4>
                     <ul>
                         <li><a href="#">Home</a></li>
                         <li><a href="#">About us</a></li>
@@ -415,35 +277,22 @@
                 </div>
 
                 <div class="col-lg-2 col-md-3 footer-links">
-                    <h4>Our Services</h4>
+                    <h4>我的專業</h4>
                     <ul>
-                        <li><a href="#">Web Design</a></li>
-                        <li><a href="#">Web Development</a></li>
-                        <li><a href="#">Product Management</a></li>
-                        <li><a href="#">Marketing</a></li>
-                        <li><a href="#">Graphic Design</a></li>
+                        <li><a href="https://one-mercury.com/">MMT</a></li>
+                        <li><a href="event-details.html">長期照護服務</a></li>
+                        <li><a href="privacy.html">護理照護</a></li>
+                        <li><a href="https://www.fubon.com/life/product/personal/">富邦保險</a></li>
                     </ul>
                 </div>
 
                 <div class="col-lg-2 col-md-3 footer-links">
-                    <h4>Hic solutasetp</h4>
+                    <h4>聯絡我</h4>
                     <ul>
-                        <li><a href="#">Molestiae accusamus iure</a></li>
-                        <li><a href="#">Excepturi dignissimos</a></li>
-                        <li><a href="#">Suscipit distinctio</a></li>
-                        <li><a href="#">Dilecta</a></li>
-                        <li><a href="#">Sit quas consectetur</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-2 col-md-3 footer-links">
-                    <h4>Nobis illum</h4>
-                    <ul>
-                        <li><a href="#">Ipsam</a></li>
-                        <li><a href="#">Laudantium dolorum</a></li>
-                        <li><a href="#">Dinera</a></li>
-                        <li><a href="#">Trodelas</a></li>
-                        <li><a href="#">Flexo</a></li>
+                        <li><a href="news-details.html"><i class="bi bi-linkedin"></i></a></li>
+                        <li><a href="event-details.html">Gmail</a></li>
+                        <li><a href="privacy.html"><i class="bi bi-instagram"></i></a></li>
+                        <li><a href="terms-of-service.html">富邦保險</a></li>
                     </ul>
                 </div>
 

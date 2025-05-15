@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Index - NiceSchool Bootstrap Template</title>
+    <title>LuLu | Personal Advisor for Life & Soul</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
 
@@ -100,9 +100,9 @@
                     <li class="dropdown">
                         <a href = "/"><span>聯絡我</span><i class="bi bi-chevron-down toggle-dropdown"></i></a>
                         <ul>
-                            <li><a href="news-details.html">Line</a></li>
+                            <li><a href="news-details.html"><i class="bi bi-linkedin"></i></a></li>
                             <li><a href="event-details.html">Gmail</a></li>
-                            <li><a href="privacy.html">Ig</a></li>
+                            <li><a href="privacy.html"><i class="bi bi-instagram"></i></a></li>
                             <li><a href="terms-of-service.html">富邦保險</a></li>
                         </ul>
                     </li>

@@ -24,32 +24,42 @@
                         <div class="card-body">
                             <h1 class="card-title text-center mb-4 text-primary"><i
                                     class="bi bi-file-earmark-plus-fill"></i> 填寫專業資料</h1>
+
+
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <strong>請修正以下錯誤：</strong>
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+
                             <form action="{{ route('admin.major.insert') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
 
-                                <!-- 專業代號 -->
+                                <!-- 所屬分類、專業標籤 -->
                                 <div class="mb-3">
-                                    <label for="majorId" class="form-label">專業代號 <span class="text-danger">*</span></label>
-                                    <input type="text" name="majorId" id="majorId" class="form-control"
-                                        value="{{ old('majorId') }}" placeholder="例：MMT01" required>
+                                    <label for="majorId" class="form-label">所屬分類</label>
+                                    <select name="majorId" id="majorId" class="form-select">
+                                        @foreach ($categories as $category)
+                                            <option value="{{ $category->id }}"
+                                                @if (old('majorId') == $category->id) selected @endif>
+                                                {{ $category->name }}
+                                            </option>
+                                        @endforeach
+                                    </select>
                                 </div>
 
                                 <!-- 專業名稱 -->
                                 <div class="mb-3">
                                     <label for="name" class="form-label">專業名稱 <span class="text-danger">*</span></label>
                                     <input type="text" name="name" id="name" class="form-control"
-                                        value="{{ old('name') }}" placeholder="例：MMT系統介紹" required>
+                                        value="{{ old('name') }}" placeholder="例：天賦6" required>
                                 </div>
 
-                                <!-- 專業分類 -->
-                                <div class="mb-3">
-                                    <label for="category" class="form-label">專業分類</label>
-                                    <select name="majorId" id="category" class="form-select">
-                                        @foreach ($categories as $category)
-                                            <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
 
                                 <!-- 上傳圖片 -->
                                 <div class="mb-3">

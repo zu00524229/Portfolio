@@ -31,7 +31,7 @@
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #000000;  /* The default color of the main navmenu links */
+  --nav-color: #8b4513;  /* The default color of the main navmenu links */
   --nav-hover-color: #8b4513; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
@@ -50,7 +50,7 @@
   --background-color: #ffc79e;    /* 遮照顏色*/
   --default-color: #ffffff;
   --heading-color: #8b4513;
-  --surface-color: #252525;
+  --surface-color: #8b4513;
   --contrast-color: #8b4513;
 }
 
@@ -221,7 +221,7 @@ h6 {
   .navmenu a:focus {
     color: var(--nav-color);
     padding: 18px 15px;
-    font-size: 16px;
+    font-size: 18px;
     font-family: var(--nav-font);
     font-weight: 400;
     display: flex;

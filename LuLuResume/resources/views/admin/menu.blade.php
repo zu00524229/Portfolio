@@ -4,7 +4,7 @@
         <li class="nav-item mt-3">
             <a href="/admin/manager/list" class="nav-link d-flex align-items-center">
                 <i class="nav-icon bi bi-people-fill fs-4 me-2"></i>
-                <p class="mb-0">員工管理權限</p>
+                <p class="mb-0">員工管理</p>
             </a>
         </li>
         <!-- 商品管理 -->
@@ -30,13 +30,6 @@
             <a href="/admin/notice/list" class="nav-link d-flex align-items-center">
                 <i class="nav-icon bi bi-megaphone-fill fs-4 me-2"></i>
                 <p class="mb-0">公告管理系統</p>
-            </a>
-        </li>
-        <!-- 一對一諮詢 -->
-        <li class="nav-item">
-            <a href="/admin/notice/list" class="nav-link d-flex align-items-center">
-                <i class="nav-icon bi bi-megaphone-fill fs-4 me-2"></i>
-                <p class="mb-0">一對一諮詢</p>
             </a>
         </li>
         <!-- 聯絡我們 -->
