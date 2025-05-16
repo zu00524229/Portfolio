@@ -77,15 +77,13 @@
 
             <nav id="navmenu" class="navmenu">
                 <ul>
-                    <li><a href="/" class="active">Home</a></li>
+                    <li><a href="#" class="active">Home</a></li>
                     <li class="dropdown">
                         <a href="/"><span>關於我</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                         <ul>
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="admissions.html">Admissions</a></li>
-                            <li><a href="academics.html">Academics</a></li>
-                            <li><a href="faculty-staff.html">Faculty &amp; Staff</a></li>
-                            <li><a href="campus-facilities.html">Campus &amp; Facilities</a></li>
+                            <li><a href="#about-me">關於我</a></li>
+                            <li><a href="#about">MMT天賦系統</a></li>
+                            <li><a href="#featured-programs">專長介紹</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">

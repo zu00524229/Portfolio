@@ -7,7 +7,7 @@
 
             <div class="hero-container">
                 <video autoplay="" muted="" loop="" playsinline="" class="video-background">
-                    <source src="assets/img/education/video-2.mp4" type="video/mp4">
+                    <source src="assets/img/education/bghgmg.mp4" type="video/mp4">
                 </video>
                 <div class="overlay"></div>
                 <div class="container">
@@ -17,7 +17,7 @@
                                 <h1>About Me</h1>
                                 <p>照顧他人曾是我的職責，如今是我的選擇。從護理走進富邦保險，我將療癒的本質帶進保障的世界，透過 MMT 與塔羅陪伴你看見自己的光。</p>
                                 <div class="cta-buttons">
-                                    <a href="#contact" class="btn-primary">預約一對一諮詢</a>
+                                    <a href="#contact" class="btn-primary">MMT預約一對一諮詢</a>
                                     <a href="#about" class="btn-secondary">了解我的專業</a>
                                 </div>
                             </div>
@@ -71,24 +71,24 @@
                     </div>
                 </div>
             </div>
-
+            {{-- 網頁腰線 --}}
             <div class="event-ticker">
                 <div class="container">
                     <div class="row gy-4">
                         <div class="col-md-6 col-xl-4 col-12 ticker-item">
                             <span class="date">NOV 15</span>
-                            <span class="title">Open House Day</span>
-                            <a href="#" class="btn-register">Register</a>
+                            <span class="title">自我介紹</span>
+                            <a href="#about-me" class="btn-register">Register</a>
                         </div>
                         <div class="col-md-6 col-12 col-xl-4  ticker-item">
                             <span class="date">DEC 5</span>
-                            <span class="title">Application Workshop</span>
-                            <a href="#" class="btn-register">Register</a>
+                            <span class="title">MMT天賦系統</span>
+                            <a href="#about" class="btn-register">Register</a>
                         </div>
                         <div class="col-md-6 col-12 col-xl-4 ticker-item">
                             <span class="date">JAN 10</span>
-                            <span class="title">International Student Orientation</span>
-                            <a href="#" class="btn-register">Register</a>
+                            <span class="title">技能專長</span>
+                            <a href="#featured-programs" class="btn-register">Register</a>
                         </div>
                     </div>
                 </div>
@@ -96,51 +96,152 @@
 
         </section><!-- /Hero Section -->
 
-        <!-- About Section -->
-        <section id="about" class="about section">
+        <!-- 自我介紹區塊 -->
+        <section id="about-me" class="intro-section section">
+
+            <!-- Section Title -->
+            <div class="container section-title" data-aos="fade-up">
+                {{-- <h2>關於我</h2> --}}
+                <p>我是魯魯，一位融合靈性療癒與專業保險的陪跑者，用溫柔與洞察陪伴人們穿越人生轉折。</p>
+            </div>
 
             <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <div class="row align-items-center gy-3">
 
-                <div class="row mb-5">
-                    <div class="col-lg-6 pe-lg-5" data-aos="fade-right" data-aos-delay="200">
-                        <h2 class="display-6 fw-bold mb-4">Empowering Minds, <span>Shaping Futures</span></h2>
-                        <p class="lead mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus
-                            nec ullamcorper mattis, pulvinar dapibus leo.</p>
-                        <div class="d-flex flex-wrap gap-4 mb-4">
-                            <div class="stat-box">
-                                <span class="stat-number"><span data-purecounter-start="0" data-purecounter-end="25"
-                                        data-purecounter-duration="1" class="purecounter"></span>+</span>
-                                <span class="stat-label">Years</span>
-                            </div>
-                            <div class="stat-box">
-                                <span class="stat-number"><span data-purecounter-start="0" data-purecounter-end="2500"
-                                        data-purecounter-duration="1" class="purecounter"></span>+</span>
-                                <span class="stat-label">Students</span>
-                            </div>
-                            <div class="stat-box">
-                                <span class="stat-number"><span data-purecounter-start="0" data-purecounter-end="125"
-                                        data-purecounter-duration="1" class="purecounter"></span>+</span>
-                                <span class="stat-label">Faculty</span>
+                    <div class="col-lg-6" data-aos="fade-right" data-aos-delay="200">
+                        <div class="students-life-img position-relative">
+                            <img src="assets/img/lulu/lu02.png" class="img-fluid rounded-4 shadow-sm w-100" alt="">
+                            <div class="img-overlay">
+                                <h3>SoulFlow · 靈感旅人</h3>
+                                <a href="about.html" class="explore-btn">探索更多 <i class="bi bi-arrow-right"></i></a>
                             </div>
                         </div>
+                    </div>
+
+                    <div class="col-lg-6" data-aos="fade-left" data-aos-delay="300">
+                        <div class="students-life-content">
+
+                            <div class="row gy-4 mb-4">
+                                <div class="col-md-6" data-aos="zoom-in" data-aos-delay="200">
+                                    <div class="student-activity-item h-100">
+                                        {{-- <div class="icon-box">
+                                            <i class="bi bi-people"></i>
+                                        </div> --}}
+                                        <h4>👥 個案陪跑</h4>
+                                        <p>從MMT天賦系統出發，協助你梳理生命故事，看見內在渴望與卡點，找到真正適合你的節奏與方向。我相信，每一個人都有能力改寫自己的人生劇本，只是需要一位陪跑者，在關鍵時刻拉你一把。
+                                        </p>
+                                        <a href="https://one-mercury.com/" target="_blank"
+                                            class="btn btn-outline-primary btn-sm mt-2">指定我諮詢 →</a>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6" data-aos="zoom-in" data-aos-delay="300">
+                                    <div class="student-activity-item h-100">
+                                        {{-- <div class="icon-box">
+                                            <i class="bi bi-heart-pulse"></i>
+                                        </div> --}}
+                                        <h4>🧘 靈性療癒</h4>
+                                        <p>結合塔羅、精油與意識對話，透過高敏感與直覺力，協助你看見潛藏的能量訊息。不只是解牌，而是引導你回到自己的內在力量，重新與身心靈建立連結，溫柔地療癒那些未被理解的傷。
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6" data-aos="zoom-in" data-aos-delay="400">
+                                    <div class="student-activity-item h-100">
+                                        {{-- <div class="icon-box">
+                                            <i class="bi bi-journal-bookmark"></i>
+                                        </div> --}}
+                                        <h4>💼 保險顧問 × 個人特質</h4>
+                                        <p>擁有專業臨床護理背景，理解身體與醫療的細節，結合 MMT
+                                            天賦系統與心理學觀察力，幫助保險客戶找出「真正適合」自己的保單配置。<br>
+                                            我擅長聆聽，擁有豐富的同理心，總是讓人覺得親近安心。為人善良、熱於助人。
+                                        </p>
+                                        <a href="https://www.fubon.com/life/product/personal/" target="_blank"
+                                            class="btn btn-outline-primary btn-sm mt-2">了解更多保險 →</a>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6" data-aos="zoom-in" data-aos-delay="500">
+                                    <div class="student-activity-item h-100">
+                                        {{-- <div class="icon-box">
+                                            <i class="bi bi-globe"></i>
+                                        </div> --}}
+                                        <h4>🌏 多元整合</h4>
+                                        <p>我不只是一個角色，而是穿梭於療癒者、顧問與學習者之間的多面向實踐者。橫跨護理、靈性、保險、教育，擁有架構式思維，也願意不斷精進並分享。這樣的整合力，是我提供服務時最大的價值來源。
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            {{-- <div class="students-life-cta" data-aos="fade-up" data-aos-delay="600">
+                                <a href="about.html" class="btn btn-primary">深入了解魯魯的專業旅程</a>
+                            </div> --}}
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- MMT天賦系統標題 -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>MMT天賦系統</h2>
+            <p>我是魯魯，一位融合靈性療癒與專業保險的陪跑者，用溫柔與洞察陪伴人們穿越人生轉折。</p>
+        </div>
+
+        <!-- MMT天賦系統 -->
+        <section id="about" class="about section">
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <div class="row mb-5">
+                    <div class="col-lg-6 pe-lg-5" data-aos="fade-right" data-aos-delay="200">
+                        <h3>甚麼是MMT天賦系統?</h3>
+                        <p class="lead mb-4">MMT 是一套結合 數字排序、心理學與關係圓形圖譜 的人際系統科技。<br>
+                            透過專利演算法，只需輸入你的 出生年月日，<br>
+                            即可運算出 22 種人格特質，建構出專屬的「關係設計圖」。<br>
+                        <h3>MMT 能幫助你——</h3>
+                        — 看懂你在關係裡的行為邏輯與盲點<br>
+                        — 提升團隊合作與領導力<br>
+                        — 修復親密關係、強化親子理解<br>
+                        — 精準掌握人與人之間的默契與衝突動力<br>
+                        </p>
+                        <div class="d-flex flex-wrap gap-4 mb-4">
+                            <div class="stat-box">
+                                <span class="stat-number"><span data-purecounter-start="0" data-purecounter-end="5"
+                                        data-purecounter-duration="1" class="purecounter"></span>+</span>
+                                <span class="stat-label">探索經歷（年）</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-number"><span data-purecounter-start="0" data-purecounter-end="300"
+                                        data-purecounter-duration="1" class="purecounter"></span>+</span>
+                                <span class="stat-label">陪跑個案</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-number"><span data-purecounter-start="0" data-purecounter-end="50"
+                                        data-purecounter-duration="1" class="purecounter"></span>+</span>
+                                <span class="stat-label">團體講座 / 分析紀錄</span>
+                            </div>
+                        </div>
+
                         <div class="d-flex align-items-center mt-4 signature-block">
                             <img src="assets/img/misc/signature-1.webp" alt="Principal's Signature" width="120">
                             <div class="ms-3">
-                                <p class="mb-0 fw-bold">Dr. Elizabeth Morgan</p>
-                                <p class="mb-0 text-muted">Principal</p>
+                                <p class="mb-0 fw-bold">LuLu 邱議萱</p>
+                                <p class="mb-0 text-muted">MMT人際探索分析師｜保險顧問</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6" data-aos="fade-left" data-aos-delay="300">
                         <div class="image-stack">
                             <div class="image-stack-item image-stack-item-top" data-aos="zoom-in" data-aos-delay="400">
-                                <img src="assets/img/education/campus-4.webp" alt="Campus Life"
+                                <img src="assets/img/mmt/mmt6.png" alt="Campus Life"
                                     class="img-fluid rounded-4 shadow-lg">
                             </div>
                             <div class="image-stack-item image-stack-item-bottom" data-aos="zoom-in"
                                 data-aos-delay="500">
-                                <img src="assets/img/education/students-2.webp" alt="Students"
-                                    class="img-fluid rounded-4 shadow-lg">
+                                <img src="assets/img/mmt/mmt19.png" alt="Students" class="img-fluid rounded-4 shadow-lg">
                             </div>
                         </div>
                     </div>
@@ -150,31 +251,36 @@
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
                         <div class="value-card h-100">
                             <div class="card-icon">
-                                <i class="bi bi-rocket-takeoff"></i>
+                                <i class="bi-compass"></i>
                             </div>
-                            <h3>Our Mission</h3>
-                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                pariatur excepteur sint occaecat.</p>
+                            <h3>Our Mission｜我們的使命</h3>
+                            <p>透過MMT系統與心理學的結合，幫助每個人認識自我、發掘潛能，讓理解自己與他人不再是難題。
+                                我們致力於建立一個看得懂關係、說得出情緒、走得出困境的溝通橋樑，讓人際互動更加清晰、自在、有方向。<br>
+                            </p>
                         </div>
                     </div>
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
                         <div class="value-card h-100">
                             <div class="card-icon">
-                                <i class="bi bi-eye"></i>
+                                <i class="bi bi-binoculars"></i>
                             </div>
-                            <h3>Our Vision</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                labore et dolore magna aliqua ut enim ad minim.</p>
+                            <h3>Our Vision｜我們的願景</h3>
+                            <p>相信:每個人都值得擁有清楚自我定位與人生方向的能力。<br>
+                                透過MMT的結構化模型與引導，我們希望成為協助人們跨越關係卡點、找到生涯道路的明燈。<br>
+                                不論是職涯發展、親子教養，還是情感修復，MMT都是你理解世界與自己的新工具。<br>
+                            </p>
                         </div>
                     </div>
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
                         <div class="value-card h-100">
                             <div class="card-icon">
-                                <i class="bi bi-star"></i>
+                                <i class="bi bi-heart"></i>
                             </div>
-                            <h3>Our Values</h3>
-                            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-                                anim id est laborum consectetur adipiscing elit.</p>
+                            <h3>Our Values｜我們的價值觀</h3>
+                            <p>理解是改變的起點：相信深入的理解，能帶來真正的成長。<br>
+                                助人為本：以同理心傾聽與陪伴每一位探索者的心路歷程。<br>
+                                科學與直覺並進：結合心理學理論與象徵語言，引導出專屬的發展方向。<br>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -254,8 +360,8 @@
                     <div class="footer-contact pt-3">
                         <p>A108 Adam Street</p>
                         <p>New York, NY 535022</p>
-                        <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-                        <p><strong>Email:</strong> <span>info@example.com</span></p>
+                        <p class="mt-3"><strong>Phone:</strong> <span>09xx-873-xxx</span></p>
+                        <p><strong>Email:</strong> <span>aa0120love@gmail.com</span></p>
                     </div>
                     <div class="social-links d-flex mt-4">
                         <a href=""><i class="bi bi-twitter-x"></i></a>
@@ -268,18 +374,16 @@
                 <div class="col-lg-2 col-md-3 footer-links">
                     <h4>關於我</h4>
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About us</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Terms of service</a></li>
-                        <li><a href="#">Privacy policy</a></li>
+                        <li><a href="#about-me">About us</a></li>
+                        <li><a href="#about">MMT天賦系統</a></li>
+                        <li><a href="#featured-programs">專長介紹</a></li>
                     </ul>
                 </div>
 
                 <div class="col-lg-2 col-md-3 footer-links">
-                    <h4>我的專業</h4>
+                    <h4>業務範圍</h4>
                     <ul>
-                        <li><a href="https://one-mercury.com/">MMT</a></li>
+                        <li><a href="https://one-mercury.com/">MMT一對一諮詢</a></li>
                         <li><a href="event-details.html">長期照護服務</a></li>
                         <li><a href="privacy.html">護理照護</a></li>
                         <li><a href="https://www.fubon.com/life/product/personal/">富邦保險</a></li>
@@ -292,7 +396,6 @@
                         <li><a href="news-details.html"><i class="bi bi-linkedin"></i></a></li>
                         <li><a href="event-details.html">Gmail</a></li>
                         <li><a href="privacy.html"><i class="bi bi-instagram"></i></a></li>
-                        <li><a href="terms-of-service.html">富邦保險</a></li>
                     </ul>
                 </div>
 
@@ -300,14 +403,9 @@
         </div>
 
         <div class="container copyright text-center mt-4">
-            <p>© <span>Copyright</span> <strong class="px-1 sitename">MyWebsite</strong> <span>All Rights Reserved</span>
-            </p>
+            <p>© 2025 <strong class="px-1 sitename">SoulFlow</strong> 版權所有</p>
             <div class="credits">
-                <!-- All the links in the footer should remain intact. -->
-                <!-- You can delete the links only if you've purchased the pro version. -->
-                <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                改版設計 by LuLu謙｜原始模板來自 <a href="https://bootstrapmade.com/">BootstrapMade</a>
             </div>
         </div>
 
