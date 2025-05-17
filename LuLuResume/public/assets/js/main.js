@@ -185,3 +185,32 @@
   });
 
 })();
+
+// 手機號碼、電子郵件驗證規則
+const telephoneRegex = /^09\d{8}$/;
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+// 元素取得
+const telephoneField = document.getElementById('contact-phone');
+const emailField = document.getElementById('contact-email');
+const registerButton = document.getElementById('registerButton'); // 確保對應 HTML 中按鈕
+const telephoneError = document.getElementById('telephoneError');
+const emailError = document.getElementById('emailError');
+
+// 即時驗證功能
+function validateField(field, regex, errorElement, errorMessage) {
+  if (field && errorElement) {
+    field.addEventListener('input', () => {
+      if (!regex.test(field.value)) {
+        errorElement.textContent = errorMessage;
+      } else {
+        errorElement.textContent = '';
+      }
+      updateRegisterButtonState();
+    });
+  }
+}
+
+// 驗證各個輸入框
+validateField(telephoneField, telephoneRegex, telephoneError, '手機號碼格式錯誤，需為10碼並以09開頭。');
+validateField(emailField, emailRegex, emailError, '電子郵件格式不正確。');

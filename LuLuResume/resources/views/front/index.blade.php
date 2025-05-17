@@ -347,6 +347,95 @@
 
         </section><!-- /Featured Programs Section -->
 
+        <!--聯絡我-->
+        <section id="contact" class="section bg-light">
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="contact-form-wrapper">
+                            <h2 class="text-center mb-4">聯絡我</h2>
+
+                            @if (session('success'))
+                                <div class="alert alert-success">{{ session('success') }}</div>
+                            @endif
+
+                            <form action="{{ route('contact.store') }}" method="POST" class="php-email-form">
+                                @csrf
+
+                                <!--左欄-->
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <div class="input-with-icon">
+                                            <i class="bi bi-person"></i>
+                                            <label for="name" class="form-label">姓名 <span
+                                                    class="text-danger">*</span></label>
+                                            <input type="text" name="name" class="form-control" required
+                                                value="{{ old('name') }}">
+                                        </div>
+
+
+                                        <div class="input-with-icon">
+                                            <i class="bi bi-phone"></i>
+                                            <label for="phone" class="form-label">手機</label>
+                                            <input type="text" name="phone" class="form-control"
+                                                value="{{ old('phone') }}">
+                                        </div>
+                                    </div>
+
+
+                                    <!--右欄-->
+                                    <div class='col-md-6'>
+                                        <div class="input-with-icon">
+                                            <i class="bi bi-chat-left-dots"></i>
+                                            <label for="line" class="form-label">LINE ID</label>
+                                            <input type="text" name="line" class="form-control"
+                                                value="{{ old('line') }}">
+                                        </div>
+
+                                        <div class="input-with-icon">
+                                            <i class="bi bi-text-left"></i>
+                                            <label for="subject" class="form-label">主題</label>
+                                            <select name="subject" class="form-select">
+                                                <option value="">請選擇</option>
+                                                <option value="MMT一對一">MMT 一對一</option>
+                                                <option value="長照諮詢">長照諮詢</option>
+                                                <option value="保險規劃">保險規劃</option>
+                                                <option value="其他">其他</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <div class="input-with-icon">
+                                            <i class="bi bi-envelope"></i>
+                                            <label for="email" class="form-label">Email <span
+                                                    class="text-danger">*</span></label>
+                                            <input type="email" name="email" class="form-control" required
+                                                value="{{ old('email') }}">
+                                            <div id="emailError" class="form-text text-danger"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <div class="input-with-icon">
+                                            <i class="bi bi-chat-dots message-icon"></i>
+                                            <label for="message" class="form-label">留言內容 <span
+                                                    class="text-danger">*</span></label>
+                                            <textarea name="message" rows="5" class="form-control" required>{{ old('message') }}</textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 text-center">
+                                        <button type="submit" class="btn btn-primary">送出留言</button>
+                                    </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
     </main>
 
     <footer id="footer" class="footer position-relative dark-background">
@@ -411,34 +500,4 @@
 
     </footer>
     </div>
-    <script>
-        // 手機號碼、電子郵件驗證規則
-        const telephoneRegex = /^09\d{8}$/;
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-        // 元素取得
-        const telephoneField = document.getElementById('contact-phone');
-        const emailField = document.getElementById('contact-email');
-        const registerButton = document.getElementById('registerButton'); // 確保對應 HTML 中按鈕
-        const telephoneError = document.getElementById('telephoneError');
-        const emailError = document.getElementById('emailError');
-
-        // 即時驗證功能
-        function validateField(field, regex, errorElement, errorMessage) {
-            if (field && errorElement) {
-                field.addEventListener('input', () => {
-                    if (!regex.test(field.value)) {
-                        errorElement.textContent = errorMessage;
-                    } else {
-                        errorElement.textContent = '';
-                    }
-                    updateRegisterButtonState();
-                });
-            }
-        }
-
-        // 驗證各個輸入框
-        validateField(telephoneField, telephoneRegex, telephoneError, '手機號碼格式錯誤，需為10碼並以09開頭。');
-        validateField(emailField, emailRegex, emailError, '電子郵件格式不正確。');
-    </script>
 @endsection

@@ -34,6 +34,7 @@
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.15.3/dist/sweetalert2.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
 
+
 </head>
 
 
@@ -72,7 +73,7 @@
                 <!-- Uncomment the line below if you also wish to use an image logo -->
                 <!-- <img src="assets/img/logo.webp" alt=""> -->
                 <i class="bi bi-buildings"></i>
-                <h1 class="sitename">Home</h1>
+                <h1 class="sitename">LuLuSchool</h1>
             </a>
 
             <nav id="navmenu" class="navmenu">
@@ -104,6 +105,16 @@
                             <li><a href="terms-of-service.html">富邦保險</a></li>
                         </ul>
                     </li>
+                    <!--會員專區-->
+                    @if (session('role') === 'player')
+                        <li class="dropdown">
+                            <a href="{{ route('front.player.dashboard') }}">會員專區
+                                <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                            <ul>
+                                <li><a href="{{ route('front.player.edit') }}">修改會員資料</a></li>
+                            </ul>
+                        </li>
+                    @endif
 
                     @if (session('managerId') && session('role') === 'admin')
                         <li><a href="{{ route('admin.home') }}" style="color: rgb(26, 189, 118);">後臺專區</a></li>

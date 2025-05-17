@@ -22,6 +22,7 @@ class IndexController extends Controller
 
     public function login()
     {
+
         return view("front.login");
     }
 
@@ -39,11 +40,12 @@ class IndexController extends Controller
         return redirect()->route('front.login')->with('message', '已成功登出');
     }
 
-    public function postLogin(Request $request)
+    public function postLogin(Request $req)
     {
-        $credentials = $request->only('account', 'password');
+        $credentials = $req->only('account', 'password');
 
-        // 管理員登入（Auth 使用 managers 表）
+        // 嘗試登入為管理員
+
         if (Auth::attempt($credentials)) {
             $manager = Auth::user();
 
@@ -60,12 +62,12 @@ class IndexController extends Controller
         $player = Player::where('account', $credentials['account'])->first();
         if ($player && Hash::check($credentials['password'], $player->password)) {
             session([
-                'playerId' => $player->Id,
+                'playerId' => $player->id,
                 'nickName' => $player->nickName,
-                'point' => $player->point,
+                'role' => 'player',
             ]);
             session()->save();
-            // dd(session()->all()); 
+            // dd(session()->all());
 
             return redirect()->route('front.index')->with('message', '玩家登入成功！');
         }

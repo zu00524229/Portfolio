@@ -16,7 +16,7 @@ class Major extends Model
         'name',
         'photo',
         'content',
-        'creatrTime',
+        'createTime',
         'updateTime',
     ];
 

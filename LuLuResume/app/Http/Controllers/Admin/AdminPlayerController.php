@@ -3,53 +3,74 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\LotteryResult;
 use App\Models\Player;
-use App\Models\Recharge;
-use App\Models\Shipping;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class AdminPlayerController extends Controller
 {
-    public function playerList(Request $req)
+    // 會員列表
+    public function list(Request $request)
     {
-        // 檢查是否有搜尋關鍵字
-        $keyword = $req->input('keyword');
-
-        // 如果關鍵字是性別，將其轉換為數值
-        $genderMapping = [
-            '男' => 0,
-            '女' => 1,
-        ];
-        // 如果關鍵字對應性別，取得對應的數值，否則為 null
+        $keyword = $request->input('keyword');
+        $genderMapping = ['男' => 0, '女' => 1];
         $genderValue = $genderMapping[$keyword] ?? null;
 
-        // 根據關鍵字搜尋
         $playerList = Player::when($keyword, function ($query) use ($keyword, $genderValue) {
             $query->where(function ($q) use ($keyword, $genderValue) {
                 $q->where('name', 'like', "%{$keyword}%")
                     ->orWhere('nickName', 'like', "%{$keyword}%")
                     ->orWhere('account', 'like', "%{$keyword}%")
                     ->orWhere('telephone', 'like', "%{$keyword}%")
-                    ->orWhere('address', 'like', "%{$keyword}%")
-                    ->orWhere('point', 'like', "%{$keyword}%")
-                    ->orWhere('birthdate', 'like', "%{$keyword}%")
-                    ->orWhere('email', 'like', "%{$keyword}%");
+                    ->orWhere('email', 'like', "%{$keyword}%")
+                    ->orWhere('birthdate', 'like', "%{$keyword}%");
 
-                // 若為性別搜尋，加入條件
                 if (!is_null($genderValue)) {
                     $q->orWhere('gender', $genderValue);
                 }
             });
         })->paginate(10);
 
-        return view('admin.player.playerList', compact('playerList'));
+        return view('admin.player.list', compact('playerList'));
     }
 
-    public function rechargeList(Request $req)
+    // 顯示會員資料編輯頁
+    public function edit($id)
     {
-        $rechargeList = Recharge::with('player')->where("playerId", $req->Id)->paginate(10);
+        $player = Player::findOrFail($id);
+        return view('admin.player.edit', compact('player'));
+    }
 
-        return view('admin.player.rechargeList', compact('rechargeList'));
+    // 更新會員資料
+    public function update(Request $req, $id)
+    {
+        $playerAccount = Player::where("account", $req->account)->where("id", "<>", $id)->first();
+        if ($playerAccount) {
+            return back()->withErrors(["error" => "帳號已存在，請使用其他帳號"])->withInput();
+        }
+
+        $player = Player::findOrFail($id);
+        $player->update([
+            'name' => $req->name,
+            'nickName' => $req->nickName,
+            'account' => $req->account,
+            'password' => $req->filled('password') ? Hash::make($req->password) : $player->password,
+            'telephone' => $req->telephone,
+            'email' => $req->email,
+            'address' => $req->address,
+            'gender' => $req->gender,
+            'birthdate' => $req->birthdate,
+            'updateTime' => now(),
+            'role' => $req->role ?? $player->role,
+        ]);
+
+        return redirect()->route('admin.player.list')->with('message', '會員資料更新成功');
+    }
+
+    // 刪除會員資料
+    public function delete(Request $req)
+    {
+        Player::destroy($req->id);
+        return redirect()->route('admin.player.list')->with('message', '會員已刪除');
     }
 }

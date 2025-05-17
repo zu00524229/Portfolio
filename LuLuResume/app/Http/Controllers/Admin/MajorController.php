@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Storage;
 
 class MajorController extends Controller
 {
-    public function list(Request $request)
+    public function list()
     {
         $majors = Major::with('majorCategory')->orderBy('createTime', 'desc')->paginate(10);
         return view('admin.major.list', compact('majors'));

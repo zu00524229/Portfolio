@@ -11,9 +11,9 @@ class Player extends Authenticatable
 
     public $timestamps = false;
     protected $table = "players";
-    protected $primaryKey = "Id";
+    protected $primaryKey = "id";
     protected $fillable = [
-        "Id",
+        "id",
         "name",
         "nickName",
         "account",
@@ -23,7 +23,6 @@ class Player extends Authenticatable
         "gender",
         "email",
         "birthdate",
-        "point",
         "createTime",
         "updateTime",
         "role",

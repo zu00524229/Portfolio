@@ -9,9 +9,9 @@ use Illuminate\Http\Request;
 class MajorCategoryController extends Controller
 {
     // 顯示分類列表
-    public function list(Request $request)
+    public function list(Request $req)
     {
-        $keyword = $request->input('keyword');
+        $keyword = $req->input('keyword');
 
         $query = Majorcategory::query();
         if ($keyword) {
@@ -31,14 +31,14 @@ class MajorCategoryController extends Controller
     }
 
     // 新增分類
-    public function insert(Request $request)
+    public function insert(Request $req)
     {
-        $request->validate([
+        $req->validate([
             'name' => 'required|string|max:255',
         ]);
 
         Majorcategory::create([
-            'name' => $request->name,
+            'name' => $req->name,
             'createTime' => now(),
             'updateTime' => now(),
         ]);
@@ -54,16 +54,16 @@ class MajorCategoryController extends Controller
     }
 
     // 更新分類
-    public function update(Request $request)
+    public function update(Request $req)
     {
-        $request->validate([
+        $req->validate([
             'id' => 'required|integer',
             'name' => 'required|string|max:255',
         ]);
 
-        $category = Majorcategory::findOrFail($request->id);
+        $category = Majorcategory::findOrFail($req->id);
         $category->update([
-            'name' => $request->name,
+            'name' => $req->name,
             'updateTime' => now(),
         ]);
 
@@ -72,10 +72,10 @@ class MajorCategoryController extends Controller
     }
 
     // 刪除分類
-    public function delete(Request $request)
+    public function delete(Request $req)
     {
-        $request->validate(['id' => 'required|integer']);
-        $category = Majorcategory::findOrFail($request->id);
+        $req->validate(['id' => 'required|integer']);
+        $category = Majorcategory::findOrFail($req->id);
         $category->delete();
 
         return redirect()->route('admin.major_category.list')->with('message', '刪除成功');
