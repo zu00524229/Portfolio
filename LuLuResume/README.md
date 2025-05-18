@@ -18,31 +18,31 @@
 
 -   **前台網頁預覽**
     -   首頁
-    -   ![首頁](public\assets\img\home.png)
+    -   ![首頁](public/assets/img/home.png)
     -   點選註冊，申請帳號密碼
-    -   ![註冊](public\assets\img\register.png)
+    -   ![註冊](public/assets/img/register.png)
     -   驗證輸入資料是否有錯誤
-    -   [驗證](public\assets\img\verify.png)
+    -   [驗證](public/assets/img/verify.png)
     -   一般會員登入成功後，導覽列會顯示會員專區
-    -   ![一般會員](public\assets\img\playerlogin.png)
+    -   ![一般會員](public/assets/img/playerlogin.png)
     -   網頁預覽
-    -   ![About](public\assets\img\aboutme.png)
-    -   ![MMT介紹](public\assets\img\MMTRre.png)
-    -   ![MMTpro](public\assets\img\MMTpro.png)
+    -   ![About](public/assets/img/aboutme.png)
+    -   ![MMT介紹](public/assets/img/MMTRre.png)
+    -   ![MMTpro](public/assets/img/MMTpro.png)
 -   **聯絡我表單**
     -   使用者可填寫表單留言，資料自動儲存至資料庫
     -   管理員可於後台查看與管理留言紀錄
     -   ![留言](public/assets/img/contact.png)
-    -   ![留言送出](public\assets\img\contactpush.png)
+    -   ![留言送出](public/assets/img/contactpush.png)
 -   **後台登入與管理功能**
     -   登出後可切換管理員帳號登入
     -   系統自動判斷登入者身份並導入對應後台
-    -   ![adminlogin](public\assets\img\adminlogin.png)
+    -   ![adminlogin](public/assets/img/adminlogin.png)
     -   登入後導覽列會顯示後台專區，進入後來到後台
-    -   ![admin](public\assets\img\admin.png)
+    -   ![admin](public/assets/img/admin.png)
     -   後台預覽
-    -   ![major](public\assets\img\major.png)
-    -   ![majorpro](public\assets\img\majorpro.png)
+    -   ![major](public/assets/img/major.png)
+    -   ![majorpro](public/assets/img/majorpro.png)
 
 ## 🔧 專案架構特色
 
