@@ -73,12 +73,12 @@
                 <!-- Uncomment the line below if you also wish to use an image logo -->
                 <!-- <img src="assets/img/logo.webp" alt=""> -->
                 <i class="bi bi-buildings"></i>
-                <h1 class="sitename">LuLuSchool</h1>
+                <h1 class="sitename">LuLuBOSS</h1>
             </a>
 
             <nav id="navmenu" class="navmenu">
                 <ul>
-                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="/" class="active">Home</a></li>
                     <li class="dropdown">
                         <a href="/"><span>關於我</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                         <ul>
@@ -97,14 +97,21 @@
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href = "/"><span>聯絡我</span><i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                        <a href="#"><span>聯絡我</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                         <ul>
-                            <li><a href="news-details.html"><i class="bi bi-linkedin"></i></a></li>
-                            <li><a href="event-details.html">Gmail</a></li>
-                            <li><a href="privacy.html"><i class="bi bi-instagram"></i></a></li>
-                            <li><a href="terms-of-service.html">富邦保險</a></li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/你的帳號" target="_blank">
+                                    <i class="bi bi-linkedin me-1"></i> LinkedIn
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/yishan168/" target="_blank">
+                                    <i class="bi bi-instagram me-1"></i> Instagram
+                                </a>
+                            </li>
                         </ul>
                     </li>
+
                     <!--會員專區-->
                     @if (session('role') === 'player')
                         <li class="dropdown">
@@ -153,6 +160,68 @@
         @yield('content')
     </div>
 
+
+    <footer id="footer" class="footer position-relative dark-background">
+
+        <div class="container footer-top">
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-6 footer-about">
+                    <a href="index.html" class="logo d-flex align-items-center">
+                        <span class="sitename">LuLuBOSS</span>
+                    </a>
+                    <div class="footer-contact pt-3">
+                        <p>A108 Adam Street</p>
+                        <p class="mt-3"><strong>Phone:</strong> <span>09xx-873-xxx</span></p>
+                        <p><strong>Email:</strong> <span>aa0120love@gmail.com</span></p>
+                    </div>
+                    <div class="social-links d-flex mt-4">
+                        <a href=""><i class="bi bi-twitter-x"></i></a>
+                        <a href=""><i class="bi bi-facebook"></i></a>
+                        <a href=""><i class="bi bi-instagram"></i></a>
+                        <a href=""><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>關於我</h4>
+                    <ul>
+                        <li><a href="#about-me">About us</a></li>
+                        <li><a href="#about">MMT天賦系統</a></li>
+                        <li><a href="#featured-programs">專長介紹</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>業務範圍</h4>
+                    <ul>
+                        <li><a href="https://one-mercury.com/">MMT一對一諮詢</a></li>
+                        <li><a href="event-details.html">長期照護服務</a></li>
+                        <li><a href="privacy.html">護理照護</a></li>
+                        <li><a href="https://www.fubon.com/life/product/personal/">富邦保險</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>聯絡我</h4>
+                    <ul>
+                        <li><a href="news-details.html"><i class="bi bi-linkedin"></i> LinkedIn</a></li>
+                        <li><a href="event-details.html">Gmail</a></li>
+                        <li><a href="https://www.instagram.com/yishan168/"><i
+                                    class="bi bi-instagram"></i>Instagram</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container copyright text-center mt-4">
+            <p>© 2025 <strong class="px-1 sitename">LuLuBOSS</strong> 版權所有</p>
+            <div class="credits">
+                改版設計 by LuLu謙｜原始模板來自 <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
+        </div>
+
+    </footer>
 
     <!-- Scroll Top -->
     <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i

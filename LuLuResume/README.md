@@ -2,16 +2,47 @@
 
 這是一個使用 Laravel 框架開發的個人網站平台，初衷是為了幫女友整合她的自我介紹、專業經歷與服務項目，同時也作為我學習 Laravel 的實戰練習。專案持續優化中，功能與模組會視需求持續擴充。
 
-.........................持續更新中..........................
+持續更新中..........................
 
-## ✨ 近期更新內容（2025/05）
+## ✨ 網站介紹
 
--   ✅ **會員專區功能上線**：註冊成功後將依身份顯示「後台專區」或「會員專區」
--   ✅ **會員登入判斷**：判斷是否為 `管理員` 或 `一般會員`，顯示對應功能
--   ✅ **聯絡我表單串接後台**：前台留言後自動存入資料庫，後台可查詢與管理
--   ✅ **後台新增模組**：
-    -   會員管理（僅支援查詢 / 編輯 / 刪除）
-    -   聯絡我留言管理（查詢 / 編輯 / 刪除）
+-   **註冊與登入機制**
+
+    -   點選註冊頁面申請帳號密碼
+    -   系統驗證輸入資料正確性
+    -   登入成功後依角色顯示「會員專區」或「後台專區」
+
+-   **會員專區**
+
+    -   一般使用者登入後導覽列顯示會員功能
+
+-   **前台網頁預覽**
+    -   首頁
+        ![首頁](public\assets\img\home.png)
+    -   點選註冊，申請帳號密碼
+        ![註冊](public\assets\img\register.png)
+    -   驗證輸入資料是否有錯誤
+        [驗證](public\assets\img\verify.png)
+    -   一般會員登入成功後，導覽列會顯示會員專區
+        ![一般會員](public\assets\img\playerlogin.png)
+    -   網頁預覽
+        ![About](public\assets\img\aboutme.png)
+        ![MMT介紹](public\assets\img\MMTRre.png)
+        ![MMTpro](public\assets\img\MMTpro.png)
+-   **聯絡我表單**
+    -   使用者可填寫表單留言，資料自動儲存至資料庫
+    -   管理員可於後台查看與管理留言紀錄
+    -   ![留言](public/assets/img/contact.png)
+        ![留言送出](public\assets\img\contactpush.png)
+-   **後台登入與管理功能**
+    -   登出後可切換管理員帳號登入
+    -   系統自動判斷登入者身份並導入對應後台
+        ![adminlogin](public\assets\img\adminlogin.png)
+    -   登入後導覽列會顯示後台專區，進入後來到後台
+        ![admin](public\assets\img\admin.png)
+    -   後台預覽
+        ![major](public\assets\img\major.png)
+        ![majorpro](public\assets\img\majorpro.png)
 
 ## 🔧 專案架構特色
 
@@ -23,9 +54,9 @@
         -   管理員顯示「後台專區」
         -   會員顯示「會員專區」
 -   完整後台管理系統模組：
-    -   員工管理（Manager）CRUD
-    -   專業分類管理（MajorCategory）CRUD
-    -   專業內容管理（Major）CRUD
+    -   員工管理（Manager） (增加 / 刪除 / 修改 / 查詢)
+    -   專業分類管理（MajorCategory） (增加 / 刪除 / 修改 / 查詢)
+    -   專業內容管理（Major） (增加 / 刪除 / 修改 / 查詢)
     -   會員管理（Player）編輯 / 刪除 / 查詢
     -   聯絡我留言管理（Contact）編輯 / 刪除 / 查詢
 -   使用中介層 Middleware 驗證後台登入權限
@@ -49,8 +80,7 @@
 ## 🗂️ 專案路徑說明
 
 -   前台首頁：`resources/views/front/index.blade.php`
--   玩家註冊：`resources/views/front/register.blade.php`
--   聯絡我表單：`resources/views/front/contact.blade.php`
+
 -   後台入口：`/admin/home`（登入後自動導入）
     -   僅當 `session('role') === 'admin'` 才顯示後台入口連結
     -   玩家登入後僅能看到自己的「會員專區」

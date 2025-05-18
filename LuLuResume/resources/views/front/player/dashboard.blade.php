@@ -4,14 +4,14 @@
     <main class="main">
 
 
-        <section class="section-top-50 section-sm-top-100">
+        <section class="featured-programs section">
             <div class="container mt-5" style="max-width: 600px;">
                 <h2 class="fw-bold text-primary text-center mb-4">@yield('title')</h2>
 
-                <div class="bg-dark text-white p-4 rounded-4 shadow-sm">
-                    <h4 class="fw-bold text-white text-center mb-4">玩家個人資訊</h4>
+                <div class="text-white p-4 rounded-4 shadow-sm">
+                    <h4 class="fw-bold text-center mb-4">玩家個人資訊</h4>
 
-                    <table class="table table-borderless text-white mb-0">
+                    <table class="table table-borderless mb-0">
                         <tbody>
                             <tr>
                                 <td class="fw-bold w-50">姓名</td>

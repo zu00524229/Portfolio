@@ -2,14 +2,13 @@
 @section('content')
     <main class="main">
 
-        <!-- Hero Section -->
+        <!-- About -->
         <section id="hero" class="hero section dark-background">
 
             <div class="hero-container">
                 <video autoplay="" muted="" loop="" playsinline="" class="video-background">
                     <source src="assets/img/education/bghgmg.mp4" type="video/mp4">
                 </video>
-                <div class="overlay"></div>
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-lg-7" data-aos="zoom-out" data-aos-delay="100">
@@ -17,7 +16,7 @@
                                 <h1>About Me</h1>
                                 <p>照顧他人曾是我的職責，如今是我的選擇。從護理走進富邦保險，我將療癒的本質帶進保障的世界，透過 MMT 與塔羅陪伴你看見自己的光。</p>
                                 <div class="cta-buttons">
-                                    <a href="#contact" class="btn-primary">MMT預約一對一諮詢</a>
+                                    <a href="https://one-mercury.com/" class="btn-primary">MMT預約一對一諮詢</a>
                                     <a href="#about" class="btn-secondary">了解我的專業</a>
                                 </div>
                             </div>
@@ -100,9 +99,10 @@
         <section id="about-me" class="intro-section section">
 
             <!-- Section Title -->
-            <div class="container section-title" data-aos="fade-up">
+            <div class="section-title" data-aos="fade-up">
                 {{-- <h2>關於我</h2> --}}
-                <p>我是魯魯，一位融合靈性療癒與專業保險的陪跑者，用溫柔與洞察陪伴人們穿越人生轉折。</p>
+                <h3>我是魯魯，一位融合MMT天賦系統與專業保險的陪跑者，</h3>
+                <h3>用溫柔與洞察陪伴人們穿越人生轉折。</h3>
             </div>
 
             <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -156,7 +156,7 @@
                                             天賦系統與心理學觀察力，幫助保險客戶找出「真正適合」自己的保單配置。<br>
                                             我擅長聆聽，擁有豐富的同理心，總是讓人覺得親近安心。為人善良、熱於助人。
                                         </p>
-                                        <a href="https://www.fubon.com/life/product/personal/" target="_blank"
+                                        <a href="https://www.instagram.com/yishan168/" target="_blank"
                                             class="btn btn-outline-primary btn-sm mt-2">了解更多保險 →</a>
                                     </div>
                                 </div>
@@ -318,7 +318,8 @@
                                     <div class="row g-0">
                                         <div class="col-md-4">
                                             <div class="program-image-wrapper">
-                                                <img src="{{ asset('storage/' . $major->photo) }}" alt="">
+                                                <img src="{{ asset('storage/' . $major->photo) }}" class="glightbox"
+                                                    data-gallery="mmt" alt="">
                                             </div>
                                         </div>
                                         <div class="col-md-8">
@@ -329,7 +330,8 @@
                                                     <span><i class="bi bi-people-fill"></i> 120 Credits</span>
                                                     <span><i class="bi bi-calendar3"></i> Fall &amp; Spring</span>
                                                 </div>
-                                                <p>{{ $major->content }}</p>
+                                                <p>{!! nl2br(e($major->content)) !!}
+                                                </p>
                                                 <a href="#" class="program-btn"><span>Learn More</span> <i
                                                         class="bi bi-arrow-right"></i></a>
                                             </div>
@@ -359,7 +361,7 @@
                                 <div class="alert alert-success">{{ session('success') }}</div>
                             @endif
 
-                            <form action="{{ route('contact.store') }}" method="POST" class="php-email-form">
+                            <form action="{{ route('contact.store') }}" method="POST">
                                 @csrf
 
                                 <!--左欄-->
@@ -437,67 +439,5 @@
 
 
     </main>
-
-    <footer id="footer" class="footer position-relative dark-background">
-
-        <div class="container footer-top">
-            <div class="row gy-4">
-                <div class="col-lg-4 col-md-6 footer-about">
-                    <a href="index.html" class="logo d-flex align-items-center">
-                        <span class="sitename">NiceSchool</span>
-                    </a>
-                    <div class="footer-contact pt-3">
-                        <p>A108 Adam Street</p>
-                        <p>New York, NY 535022</p>
-                        <p class="mt-3"><strong>Phone:</strong> <span>09xx-873-xxx</span></p>
-                        <p><strong>Email:</strong> <span>aa0120love@gmail.com</span></p>
-                    </div>
-                    <div class="social-links d-flex mt-4">
-                        <a href=""><i class="bi bi-twitter-x"></i></a>
-                        <a href=""><i class="bi bi-facebook"></i></a>
-                        <a href=""><i class="bi bi-instagram"></i></a>
-                        <a href=""><i class="bi bi-linkedin"></i></a>
-                    </div>
-                </div>
-
-                <div class="col-lg-2 col-md-3 footer-links">
-                    <h4>關於我</h4>
-                    <ul>
-                        <li><a href="#about-me">About us</a></li>
-                        <li><a href="#about">MMT天賦系統</a></li>
-                        <li><a href="#featured-programs">專長介紹</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-2 col-md-3 footer-links">
-                    <h4>業務範圍</h4>
-                    <ul>
-                        <li><a href="https://one-mercury.com/">MMT一對一諮詢</a></li>
-                        <li><a href="event-details.html">長期照護服務</a></li>
-                        <li><a href="privacy.html">護理照護</a></li>
-                        <li><a href="https://www.fubon.com/life/product/personal/">富邦保險</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-2 col-md-3 footer-links">
-                    <h4>聯絡我</h4>
-                    <ul>
-                        <li><a href="news-details.html"><i class="bi bi-linkedin"></i></a></li>
-                        <li><a href="event-details.html">Gmail</a></li>
-                        <li><a href="privacy.html"><i class="bi bi-instagram"></i></a></li>
-                    </ul>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="container copyright text-center mt-4">
-            <p>© 2025 <strong class="px-1 sitename">SoulFlow</strong> 版權所有</p>
-            <div class="credits">
-                改版設計 by LuLu謙｜原始模板來自 <a href="https://bootstrapmade.com/">BootstrapMade</a>
-            </div>
-        </div>
-
-    </footer>
     </div>
 @endsection

@@ -73,6 +73,7 @@ class MajorController extends Controller
             $major->photo = $req->file('photo')->store('majors', 'public');
         }
 
+        $major->majorId = $req->input('majorId');
         $major->name = $req->name;
         $major->content = $req->content;
         $major->updateTime = now();

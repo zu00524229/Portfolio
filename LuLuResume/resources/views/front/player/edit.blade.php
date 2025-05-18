@@ -4,7 +4,7 @@
     <main class="main">
 
 
-        <section class="section-top-50 section-sm-top-100">
+        <section class="featured-programs section">
             <div class="container" style="max-width: 600px;">
                 <h2 class="fw-bold text-primary text-center mb-4">@yield('title')</h2>
 
