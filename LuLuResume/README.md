@@ -22,7 +22,7 @@
     -   點選註冊，申請帳號密碼
     -   ![註冊](public/assets/img/register.png)
     -   驗證輸入資料是否有錯誤
-    -   [驗證](public/assets/img/verify.png)
+    -   ![驗證](public/assets/img/verify.png)
     -   一般會員登入成功後，導覽列會顯示會員專區
     -   ![一般會員](public/assets/img/playerlogin.png)
     -   網頁預覽
