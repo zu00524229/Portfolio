@@ -16,7 +16,8 @@
                                 <h1>About Me</h1>
                                 <p>照顧他人曾是我的職責，如今是我的選擇。從護理走進富邦保險，我將療癒的本質帶進保障的世界，透過 MMT 與塔羅陪伴你看見自己的光。</p>
                                 <div class="cta-buttons">
-                                    <a href="https://one-mercury.com/" class="btn-primary">MMT預約一對一諮詢</a>
+                                    <a href="https://one-mercury.com/%e5%8d%94%e6%9c%83%e8%aa%8d%e8%ad%89%e5%b8%ab%e8%b3%87/?team_category=&team_gender=&searchName=%E9%AD%AF%E9%AD%AF"
+                                        class="btn-primary">MMT預約一對一諮詢</a>
                                     <a href="#about" class="btn-secondary">了解我的專業</a>
                                 </div>
                             </div>
@@ -355,7 +356,7 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-10">
                         <div class="contact-form-wrapper">
-                            <h2 class="text-center mb-4">聯絡我</h2>
+                            <h2 class="text-center mb-4">留言板</h2>
 
                             @if (session('success'))
                                 <div class="alert alert-success">{{ session('success') }}</div>

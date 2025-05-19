@@ -80,11 +80,12 @@
                 <ul>
                     <li><a href="/" class="active">Home</a></li>
                     <li class="dropdown">
-                        <a href="/"><span>關於我</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                        <a href="#about-me"><span>導覽</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                         <ul>
                             <li><a href="#about-me">關於我</a></li>
                             <li><a href="#about">MMT天賦系統</a></li>
-                            <li><a href="#featured-programs">專長介紹</a></li>
+                            <li><a href="#featured-programs">卡牌介紹</a></li>
+                            <li><a href="#contact">留言版</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -100,7 +101,7 @@
                         <a href="#"><span>聯絡我</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                         <ul>
                             <li>
-                                <a href="https://www.linkedin.com/in/你的帳號" target="_blank">
+                                <a href="https://line.me/ti/p/w7U_i0Dc0k" target="_blank">
                                     <i class="bi bi-linkedin me-1"></i> LinkedIn
                                 </a>
                             </li>
@@ -204,7 +205,7 @@
                 <div class="col-lg-2 col-md-3 footer-links">
                     <h4>聯絡我</h4>
                     <ul>
-                        <li><a href="news-details.html"><i class="bi bi-linkedin"></i> LinkedIn</a></li>
+                        <li><a href="https://line.me/ti/p/w7U_i0Dc0k"><i class="bi bi-linkedin"></i> LinkedIn</a></li>
                         <li><a href="event-details.html">Gmail</a></li>
                         <li><a href="https://www.instagram.com/yishan168/"><i
                                     class="bi bi-instagram"></i>Instagram</a></li>
