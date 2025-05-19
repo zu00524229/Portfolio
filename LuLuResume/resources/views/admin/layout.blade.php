@@ -48,6 +48,15 @@
                 }
             });
         }
+
+        function showMessage(message) {
+            Swal.fire({
+                title: '留言內容',
+                html: '<div style="text-align:left; white-space:pre-wrap;">' + message + '</div>',
+                icon: 'info',
+                confirmButtonText: '關閉'
+            });
+        }
     </script>
     <style>
         .pagination {
@@ -86,14 +95,17 @@
                     <li class="nav-item d-none d-md-block"> <a href="/" class="nav-link">回首頁</a> </li>
                 </ul> <!--end::Start Navbar Links--> <!--begin::End Navbar Links-->
                 <ul class="navbar-nav ms-auto"> <!-- 使用 ms-auto 將內容靠右對齊 -->
+
+                    <!-- 登出按鈕 -->
                     <li class="nav-item">
-                        <form action="{{ route('admin.logout') }}" method="POST"> <!-- 登出按鈕 -->
+                        <form action="{{ route('admin.logout') }}" method="POST">
                             <!-- Laravel CSRF Token -->
                             @csrf
                             <button type="submit" class="btn btn-outline-danger btn-lg"><i
                                     class="bi bi-door-closed-fill"></i> 登出</button>
                         </form>
                     </li>
+
                 </ul>
             </div> <!--end::Container-->
         </nav> <!--end::Header--> <!--begin::Sidebar-->

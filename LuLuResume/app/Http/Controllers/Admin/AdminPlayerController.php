@@ -12,7 +12,9 @@ class AdminPlayerController extends Controller
     // 會員列表
     public function list(Request $request)
     {
+
         $keyword = $request->input('keyword');
+        // 支援使用者輸入"男"或"女"來查詢對應會員
         $genderMapping = ['男' => 0, '女' => 1];
         $genderValue = $genderMapping[$keyword] ?? null;
 
@@ -25,11 +27,12 @@ class AdminPlayerController extends Controller
                     ->orWhere('email', 'like', "%{$keyword}%")
                     ->orWhere('birthdate', 'like', "%{$keyword}%");
 
+                // 如果有符合的性別關鍵字，加入性別搜尋條件
                 if (!is_null($genderValue)) {
                     $q->orWhere('gender', $genderValue);
                 }
             });
-        })->paginate(10);
+        })->paginate(10);   // 每頁 10 筆 (分頁)
 
         return view('admin.player.list', compact('playerList'));
     }
@@ -49,12 +52,21 @@ class AdminPlayerController extends Controller
             return back()->withErrors(["error" => "帳號已存在，請使用其他帳號"])->withInput();
         }
 
+        // 驗證機制
+        $req->validate([
+            'name' => 'required|string|max:255',
+            'account' => 'required|string|max:50',
+            'email' => 'nullable|email',
+            'telephone' => 'nullable|string|max:20',
+        ]);
+
         $player = Player::findOrFail($id);
         $player->update([
             'name' => $req->name,
             'nickName' => $req->nickName,
             'account' => $req->account,
             'password' => $req->filled('password') ? Hash::make($req->password) : $player->password,
+            // 如果管理員有輸入密碼，就加密更新。如果沒有，保留原本密碼
             'telephone' => $req->telephone,
             'email' => $req->email,
             'address' => $req->address,

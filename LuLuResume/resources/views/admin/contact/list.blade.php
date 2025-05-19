@@ -42,7 +42,12 @@
                                         <td>{{ $data->phone }}</td>
                                         <td>{{ $data->line }}</td>
                                         <td>{{ $data->subject ?? '（無）' }}</td>
-                                        <td class="text-start">{{ Str::limit($data->message, 50) }}</td>
+                                        <td class="text-start">{{ Str::limit($data->message, 20) }}
+                                            <button class="btn btn-sm btn-outline-info"
+                                                onclick="showMessage('{{ addslashes($data->message) }}')">
+                                                查看
+                                            </button>
+                                        </td>
                                         <td>{{ $data->created_at }}</td>
                                         <td>
                                             <a href="{{ route('admin.contact.edit', $data->id) }}"
@@ -53,7 +58,7 @@
                                                 id="delete-form-{{ $data->id }}" style="display:inline;">
                                                 @csrf
                                                 <input type="hidden" name="id" value="{{ $data->id }}">
-                                                <button type="submit" class="btn btn-sm btn-danger"
+                                                <button type="submit" class="btn btn-sm btn-danger ms-auto"
                                                     onclick="return confirm('確定刪除這筆資料嗎？')">
                                                     <i class="bi bi-trash-fill"></i> 刪除
                                                 </button>
@@ -82,4 +87,5 @@
             </div>
         </div>
     </div>
+
 @endsection

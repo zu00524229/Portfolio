@@ -19,10 +19,6 @@
                             class="nav-icon bi bi-receipt-cutoff fs-5"></i>
                         <p>會員資料</p>
                     </a> </li>
-                <li class="nav-item ms-4"> <a href="/admin/player/list" class="nav-link"> <i
-                            class="nav-icon bi bi-tags-fill fs-5"></i>
-                        <p>業務內容</p>
-                    </a> </li>
             </ul>
         </li>
         <!-- 商品管理 -->

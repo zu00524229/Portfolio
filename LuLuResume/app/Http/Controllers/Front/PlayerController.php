@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Models\Player;
-use App\Models\Recharge;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -13,12 +12,19 @@ class PlayerController extends Controller
     // 會員專區首頁
     public function dashboard()
     {
+
+        // 雖然導覽列與流程會避免未登入者進入，
+        // 但為保險仍加一道邏輯保護
         $playerId = session('playerId');
+        // 若位登入，導向登入頁面並附上錯誤提示
         if (!$playerId) {
             return redirect()->route('front.login')->withErrors(['error' => '請先登入會員']);
         }
 
+        // 撈出目前登入會員資料
         $player = Player::find($playerId);
+
+        // 回傳個人專區首頁 View，帶入會員資料
         return view('front.player.dashboard', compact('player'));
     }
 
@@ -34,7 +40,7 @@ class PlayerController extends Controller
         return view('front.player.edit', compact('player'));
     }
 
-    // 儲存會員資料
+    // 處理會員資料
     public function update(Request $req)
     {
         $playerId = session('playerId');
@@ -59,15 +65,22 @@ class PlayerController extends Controller
             'nickName' => $req->nickName,
             'email' => $req->email,
             'telephone' => $req->telephone,
-            'address' => $req->address,     //住址
+            'address' => $req->address,     // 住址
             'birthdate' => $req->birthdate,
             'updateTime' => now(),
             'password' => $req->password ? Hash::make($req->password) : $player->password,
         ]);
 
+        // 更新 session 暱稱
         session(['nickName' => $player->nickName]);
 
         return redirect()->route('front.player.dashboard')->with('message', '會員資料更新成功！');
+    }
+
+    // 註冊
+    public function register()
+    {
+        return view("front.register");
     }
 
     // 玩家註冊資料處理
@@ -93,6 +106,6 @@ class PlayerController extends Controller
             'updateTime' => now(),
         ]);
 
-        return redirect('/front/login')->with('message', '註冊成功！請登入');
+        return redirect()->route('front.login')->with('message', '註冊成功！請登入');
     }
 }
